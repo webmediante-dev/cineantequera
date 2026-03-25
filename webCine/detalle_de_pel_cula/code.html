@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-high": "#20201f",
+            "on-surface-variant": "#adaaaa",
+            "on-tertiary-fixed": "#290045",
+            "on-primary-container": "#5b4b00",
+            "tertiary": "#d7a0ff",
+            "on-error": "#490013",
+            "surface-container-highest": "#262626",
+            "outline-variant": "#484847",
+            "primary-container": "#ffd709",
+            "surface-bright": "#2c2c2c",
+            "secondary-dim": "#e80f16",
+            "error": "#ff6e84",
+            "background": "#0e0e0e",
+            "primary-fixed-dim": "#efc900",
+            "tertiary-fixed-dim": "#c68af3",
+            "on-tertiary": "#4f127a",
+            "inverse-primary": "#705e00",
+            "on-background": "#ffffff",
+            "on-primary-fixed": "#453900",
+            "surface-variant": "#262626",
+            "on-error-container": "#ffb2b9",
+            "on-secondary-container": "#fff6f4",
+            "inverse-surface": "#fcf9f8",
+            "surface-tint": "#ffe792",
+            "error-dim": "#d73357",
+            "surface-container-low": "#131313",
+            "on-primary": "#655400",
+            "surface-dim": "#0e0e0e",
+            "on-tertiary-fixed-variant": "#54197f",
+            "primary-fixed": "#ffd709",
+            "secondary-container": "#c0000c",
+            "on-secondary": "#4a0002",
+            "on-primary-fixed-variant": "#665500",
+            "secondary-fixed-dim": "#ffb0a5",
+            "secondary-fixed": "#ffc3bb",
+            "surface-container-lowest": "#000000",
+            "on-surface": "#ffffff",
+            "error-container": "#a70138",
+            "on-secondary-fixed-variant": "#a60009",
+            "secondary": "#ff7162",
+            "on-tertiary-container": "#43006d",
+            "primary-dim": "#efc900",
+            "tertiary-dim": "#c085ed",
+            "primary": "#ffe792",
+            "on-secondary-fixed": "#700004",
+            "surface": "#0e0e0e",
+            "inverse-on-surface": "#565555",
+            "surface-container": "#1a1a1a",
+            "tertiary-fixed": "#d398ff",
+            "outline": "#767575",
+            "tertiary-container": "#cb8ff9"
+          },
+          fontFamily: {
+            "headline": ["Space Grotesk"],
+            "body": ["Manrope"],
+            "label": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+    }
+    .cinematic-gradient-overlay {
+      background: linear-gradient(to top, #0e0e0e 0%, rgba(14, 14, 14, 0.8) 40%, transparent 100%);
+    }
+    .text-glow {
+      text-shadow: 0 0 20px rgba(255, 231, 146, 0.3);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary selection:text-on-primary">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e0e] bg-opacity-80 backdrop-blur-md flex justify-between items-center px-8 py-4 w-full max-w-none">
+<div class="text-2xl font-black tracking-tighter text-[#E50914]">CINEMATIC</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#ffe792] border-b-2 border-[#ffe792] pb-1" href="../index.html">Movies</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#adaaaa] hover:text-white transition-colors duration-600" href="#">Cinemas</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#adaaaa] hover:text-white transition-colors duration-600" href="/reserva_de_entradas/code.html">Offers</a>
+<a class="font-['Space_Grotesk'] tracking-tight text-sm uppercase font-bold text-[#adaaaa] hover:text-white transition-colors duration-600" href="/panel_de_administraci_n_cms/code.html">CMS</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-[#ffe792] scale-95 duration-600 ease-in-out hover:opacity-80">notifications</button>
+<button class="material-symbols-outlined text-[#ffe792] scale-95 duration-600 ease-in-out hover:opacity-80">account_circle</button>
+</div>
+</nav>
+<main class="min-h-screen">
+<!-- Hero Section: The Projected Frame -->
+<section class="relative h-[870px] w-full overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Movie Backdrop" class="w-full h-full object-cover object-top" data-alt="cinematic wide shot of a futuristic cyberpunk city with neon yellow and red lights reflecting off wet asphalt at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4Ff4GwNadZcYsrUaqzJMBQnJMJTIoIOmZGVbI97VSeiS7hsWVJIiJFdS-f8bked557O_o1_gYAtcZowhtk9CCQuW9H9oMJqW7jQHt9796KbENwRnjbpqvSr2nBctoqG0GeGOWUd3mEZO2Z-Nx3GQ9ePx1R3uI629AvHqbPW95ePAii_e6FQx1jaI70uX2G69gXn45baK6PhUUYCFO3D3Wdsr_avzr5YEYXxUc92qrUx1IZTbsf5W5UXm-W5B7PfOcoGpJ8Tj5zVUT"/>
+<div class="absolute inset-0 cinematic-gradient-overlay"></div>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-8 md:p-16 z-10">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 items-end">
+<div class="md:col-span-8 space-y-6">
+<div class="flex flex-wrap gap-3">
+<span class="font-label text-xs uppercase tracking-widest bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full">Now Showing</span>
+<span class="font-label text-xs uppercase tracking-widest bg-surface-container-highest text-on-surface px-3 py-1 rounded-full border border-outline-variant/20">IMAX 3D</span>
+</div>
+<h1 class="font-headline text-6xl md:text-9xl font-black tracking-tighter leading-none text-glow uppercase">Neon Drift</h1>
+<div class="flex items-center gap-6 font-label text-sm text-on-surface-variant">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-primary text-base" style="font-variation-settings: 'FILL' 1;">star</span> 8.9/10</span>
+<span>2h 45m</span>
+<span>Sci-Fi / Action</span>
+<span class="border border-outline-variant px-2 py-0.5 rounded text-xs">R (18+)</span>
+</div>
+</div>
+<div class="md:col-span-4 flex justify-end">
+<button class="group relative flex items-center justify-center w-full md:w-auto px-10 py-5 bg-primary text-on-primary font-headline font-black text-xl rounded-xl transition-all duration-600 ease-in-out hover:scale-105 hover:bg-primary-container shadow-[0_0_48px_rgba(74,0,2,0.1)]">
+              BOOK TICKETS
+              <span class="material-symbols-outlined ml-2 transition-transform group-hover:translate-x-1">confirmation_number</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Content Grid -->
+<section class="max-w-7xl mx-auto px-8 py-20">
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-20">
+<!-- Left Column: Story & Media -->
+<div class="lg:col-span-2 space-y-16">
+<!-- Synopsis -->
+<div class="space-y-6">
+<h2 class="font-headline text-3xl font-bold uppercase tracking-tight text-primary">Synopsis</h2>
+<p class="font-body text-xl leading-relaxed text-on-surface-variant font-light">
+              In a sprawling megalopolis where light is the only currency, a renegade data courier must navigate the treacherous "Shadow Sectors" to deliver a package that could reboot the city's failing artificial sun. As the clock ticks down to a permanent eclipse, they are hunted by an elite squad of kinetic enforcers and ghosts from their own digital past.
+            </p>
+</div>
+<!-- Trailer Player (Glassmorphic Card) -->
+<div class="relative aspect-video rounded-xl overflow-hidden bg-surface-container-highest group">
+<img alt="Trailer Thumbnail" class="w-full h-full object-cover opacity-60 transition-transform duration-[2000ms] group-hover:scale-110" data-alt="intense close-up of a high-tech car cockpit with glowing dashboard and blurred city lights through the windshield" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoV8-6IjjEGUr-5LxdqbwZEh0qUpxYUXKF4BHX7tQps5YiAtUqrTt3Rq29UwuqaUNBR9QxWKVV9apyrheBAX7BE6xrc5kXjvaCNk0MYjntrXH6AqwytpQ_J0GWQRPJC-Z5wXM44wlxFLdf_RyeLT-w4BrzFrK_aIp_-VMP5W_fmU-ypPm4_TXo9p9cYFVqCKlBtdiyNMNspccOfkS84K6bNXVr-UhbWoLPgBS6-C-50z6YPuG_c6TOS3d3rVC8plQkUiu-jl4f1N4I"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-24 h-24 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center transition-all duration-600 hover:scale-110 hover:bg-primary hover:text-on-primary">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-4 left-6 font-label text-xs uppercase tracking-widest text-white/60">Official Trailer • 2:15</div>
+</div>
+<!-- Cast & Crew -->
+<div class="space-y-10">
+<h2 class="font-headline text-3xl font-bold uppercase tracking-tight text-primary">Cast &amp; Crew</h2>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+<div class="space-y-4">
+<div class="aspect-square rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Actor" class="w-full h-full object-cover" data-alt="portrait of a male actor with sharp features and thoughtful expression in dramatic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwB1BHsfV1HnJ-4YXDnkKat-T8cEmhNzPn9WMupv_mNsU9TwpDna6k8WdAgE_nA8eI-dRMFfD3tmOm3g8p4Vu92_t6LpwXEwv1PX897S-IlU1cKDTaNYBI_ead4ChzfV-71_UTXzaW1MBcckIhk0_xwziKSlaa_dwlBFQc__kLHQcvCLSbMOYKfvAQhbU8FHthZgUK-AcfmOtmeZuE1fBEgqXMVlrTerWhN3RKAFkwoEaWLLyeLkLSY0tHrXLjvMIMdKaBIMSSE6yo"/>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface uppercase text-sm">Marcus Vane</p>
+<p class="font-label text-xs text-on-surface-variant uppercase">Director</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="aspect-square rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Actor" class="w-full h-full object-cover" data-alt="portrait of a female lead actress with a confident gaze and minimal makeup in soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtEUE69xOwYFTJSOt5kprHyLijet_ex9zNVOzh2mEdhG8kxMu8guNhUhBv9b2Zfb3We6AUGlgX0m0YbwCiNxqw8oDk7ZJP7aubvyeI_ZIYEbnTIhlWEh-eggWVBgvdZjfBWVE-Xj5w3X0jAnmq6_k0mVGsYMRv03B1kjVcE2BXvZW6bKPduO4zpZUhKM5zLmEu5gQYah9sxNOnGUsoRjNWS4c9_AFwY35BhqwzM7jiT0mm6ndpurXtgTL8or0GjsV9P-EzRezmtjZM"/>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface uppercase text-sm">Elena Kross</p>
+<p class="font-label text-xs text-on-surface-variant uppercase">Lead Actor</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="aspect-square rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Actor" class="w-full h-full object-cover" data-alt="portrait of a seasoned male character actor with grey hair and intense expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0EgnvHkHqRmcBFd6hbG8ARwS8CbLvFqZx4bbn4MdS5gD2PXX1tG2xSmstZuc9UkxPba08Fkzx9RqThqFoU_RpOonzzxA_xB0C3pOxqBlgigLcSdPby2cvU-v38Eu7mSUJya8kH5iGGgbpDBq6y5M9rrvV9jEtJZ0MU7MlZhdia3dU4PkqPWntROxl--B40kd8oMu0c6ixeub18m2Jd6fwmIJnF5iY3iuEn8i7MIsiMp33Ds7EYPsY7ZIGLCpPmXNpnPAEf7QEgmli"/>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface uppercase text-sm">David Chen</p>
+<p class="font-label text-xs text-on-surface-variant uppercase">Supporting</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="aspect-square rounded-lg overflow-hidden grayscale hover:grayscale-0 transition-all duration-700">
+<img alt="Actor" class="w-full h-full object-cover" data-alt="portrait of a young female actress with vibrant energy in a studio setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL7EYao9BfvwhGn2zWh8lwSpkNaTHLEqoW31lPgoWjnfJnhg9vlVtdPAjn8qlNScNeNS0kz2FNJHooY8XZkOos8y7tNBAoRHBp0vrEXtoizRZso9XyLcwjxn3PSBgfI_HHC8AIl7BgV9IT00kXbguq00ZzrTrRdyMc6wF4j_eCzuySyXCY7nMHFycT2Kql1F2szBXl8XdjqrtRsTjkjKHAsTOvzsyrs7B_sMbjWNbyhiMqr8gKWZEONJbAgPcc8hYnM6TUL-7Rkueu"/>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface uppercase text-sm">Sarah Oh</p>
+<p class="font-label text-xs text-on-surface-variant uppercase">Supporting</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Showtimes (The Interactive Tier) -->
+<div class="lg:col-span-1">
+<div class="sticky top-32 space-y-8 bg-surface-container rounded-2xl p-8 border border-white/5 shadow-2xl">
+<div class="space-y-2">
+<h2 class="font-headline text-3xl font-bold uppercase tracking-tight">Showtimes</h2>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest">Select Location &amp; Experience</p>
+</div>
+<!-- Date Selector -->
+<div class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+<button class="flex flex-col items-center justify-center min-w-[64px] h-20 rounded-xl bg-primary text-on-primary">
+<span class="font-label text-[10px] uppercase font-bold">Today</span>
+<span class="font-headline text-xl font-black">24</span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[64px] h-20 rounded-xl bg-surface-container-highest text-on-surface-variant hover:text-white transition-colors">
+<span class="font-label text-[10px] uppercase font-bold">Sat</span>
+<span class="font-headline text-xl font-black">25</span>
+</button>
+<button class="flex flex-col items-center justify-center min-w-[64px] h-20 rounded-xl bg-surface-container-highest text-on-surface-variant hover:text-white transition-colors">
+<span class="font-label text-[10px] uppercase font-bold">Sun</span>
+<span class="font-headline text-xl font-black">26</span>
+</button>
+</div>
+<!-- Theaters -->
+<div class="space-y-8">
+<!-- Theater 1 -->
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">location_on</span>
+<h3 class="font-headline font-bold uppercase text-sm tracking-wide">Grand Plaza Cinema</h3>
+</div>
+<div class="space-y-3">
+<div class="flex flex-wrap gap-2">
+<span class="w-full font-label text-[10px] text-on-surface-variant uppercase tracking-tighter">Standard 2D</span>
+<button class="px-4 py-2 bg-surface-container-highest rounded-full font-label text-xs font-bold hover:bg-primary hover:text-on-primary transition-all">14:20</button>
+<button class="px-4 py-2 bg-surface-container-highest rounded-full font-label text-xs font-bold hover:bg-primary hover:text-on-primary transition-all">17:45</button>
+<button class="px-4 py-2 bg-surface-container-highest rounded-full font-label text-xs font-bold hover:bg-primary hover:text-on-primary transition-all">21:00</button>
+</div>
+<div class="flex flex-wrap gap-2">
+<span class="w-full font-label text-[10px] text-secondary uppercase tracking-tighter">Dolby Cinema</span>
+<button class="px-4 py-2 bg-surface-container-highest rounded-full font-label text-xs font-bold hover:bg-primary hover:text-on-primary transition-all">19:30</button>
+<button class="px-4 py-2 bg-surface-container-highest rounded-full font-label text-xs font-bold hover:bg-primary hover:text-on-primary transition-all">22:45</button>
+</div>
+</div>
+</div>
+<!-- Theater 2 -->
+<div class="space-y-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">location_on</span>
+<h3 class="font-headline font-bold uppercase text-sm tracking-wide">The IMAX Experience</h3>
+</div>
+<div class="space-y-3">
+<div class="flex flex-wrap gap-2">
+<span class="w-full font-label text-[10px] text-primary uppercase tracking-tighter">IMAX with Laser</span>
+<button class="px-4 py-2 bg-primary-container text-on-primary-container rounded-full font-label text-xs font-bold">15:00</button>
+<button class="px-4 py-2 bg-surface-container-highest rounded-full font-label text-xs font-bold opacity-40 cursor-not-allowed">18:30</button>
+<button class="px-4 py-2 bg-surface-container-highest rounded-full font-label text-xs font-bold hover:bg-primary hover:text-on-primary transition-all">22:00</button>
+</div>
+</div>
+</div>
+</div>
+<div class="pt-6 border-t border-white/5">
+<div class="flex justify-between items-center mb-6">
+<span class="font-label text-xs text-on-surface-variant uppercase">Selected Ticket</span>
+<span class="font-headline font-black text-xl text-primary">$18.50</span>
+</div>
+<button class="w-full py-5 bg-secondary text-white font-headline font-black text-lg rounded-xl transition-all duration-600 hover:bg-secondary-dim hover:scale-[1.02] shadow-[0_12px_48px_rgba(232,15,22,0.15)] uppercase">
+                Proceed to Checkout
+              </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full mt-20 max-w-7xl mx-auto px-8 py-12 flex flex-col items-center border-t border-white/10">
+<div class="flex gap-8 mb-8">
+<a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#adaaaa] hover:text-[#ffe792]" href="#">Privacy Policy</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#adaaaa] hover:text-[#ffe792]" href="#">Terms of Service</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#adaaaa] hover:text-[#ffe792]" href="#">Cookie Settings</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#adaaaa] hover:text-[#ffe792]" href="#">Support</a>
+</div>
+<p class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#adaaaa] text-center">
+        © 2024 THE CINEMATIC EDITORIAL. ALL RIGHTS RESERVED.
+      </p>
+</footer>
+</main>
+<!-- Mobile Bottom Nav (Suppressed for this detailed sub-page to focus on transactional flow) -->
+</body></html>

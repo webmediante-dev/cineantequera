@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;family=Manrope:wght@200;300;400;500;600;700;800&amp;family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-high": "#20201f",
+              "on-surface-variant": "#adaaaa",
+              "on-tertiary-fixed": "#290045",
+              "on-primary-container": "#5b4b00",
+              "tertiary": "#d7a0ff",
+              "on-error": "#490013",
+              "surface-container-highest": "#262626",
+              "outline-variant": "#484847",
+              "primary-container": "#ffd709",
+              "surface-bright": "#2c2c2c",
+              "secondary-dim": "#e80f16",
+              "error": "#ff6e84",
+              "background": "#0e0e0e",
+              "primary-fixed-dim": "#efc900",
+              "tertiary-fixed-dim": "#c68af3",
+              "on-tertiary": "#4f127a",
+              "inverse-primary": "#705e00",
+              "on-background": "#ffffff",
+              "on-primary-fixed": "#453900",
+              "surface-variant": "#262626",
+              "on-error-container": "#ffb2b9",
+              "on-secondary-container": "#fff6f4",
+              "inverse-surface": "#fcf9f8",
+              "surface-tint": "#ffe792",
+              "error-dim": "#d73357",
+              "surface-container-low": "#131313",
+              "on-primary": "#655400",
+              "surface-dim": "#0e0e0e",
+              "on-tertiary-fixed-variant": "#54197f",
+              "primary-fixed": "#ffd709",
+              "secondary-container": "#c0000c",
+              "on-secondary": "#4a0002",
+              "on-primary-fixed-variant": "#665500",
+              "secondary-fixed-dim": "#ffb0a5",
+              "secondary-fixed": "#ffc3bb",
+              "surface-container-lowest": "#000000",
+              "on-surface": "#ffffff",
+              "error-container": "#a70138",
+              "on-secondary-fixed-variant": "#a60009",
+              "secondary": "#ff7162",
+              "on-tertiary-container": "#43006d",
+              "primary-dim": "#efc900",
+              "tertiary-dim": "#c085ed",
+              "primary": "#ffe792",
+              "on-secondary-fixed": "#700004",
+              "surface": "#0e0e0e",
+              "inverse-on-surface": "#565555",
+              "surface-container": "#1a1a1a",
+              "tertiary-fixed": "#d398ff",
+              "outline": "#767575",
+              "tertiary-container": "#cb8ff9"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Manrope"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body class="font-body">
+<!-- Side Navigation Bar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#1a1a1a] dark:bg-[#1a1a1a] flex flex-col h-full py-6 border-r border-white/5 z-50">
+<div class="px-6 mb-8">
+<h1 class="text-xl font-bold text-[#E50914] font-headline">Theater Manager</h1>
+<p class="font-label text-xs uppercase tracking-widest text-on-surface-variant mt-1">CMS Portal</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 text-[#adaaaa] px-4 py-3 mx-2 font-body font-medium text-base hover:bg-[#262626] rounded-lg transition-all duration-300 hover:text-white transition-transform duration-600 ease-out hover:translate-x-1" href="../index.html">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-[#adaaaa] px-4 py-3 mx-2 font-body font-medium text-base hover:bg-[#262626] rounded-lg transition-all duration-300 hover:text-white transition-transform duration-600 ease-out hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+<span>Schedules</span>
+</a>
+<!-- Active Tab: Movies -->
+<a class="flex items-center gap-3 bg-[#ffe792] text-[#0e0e0e] rounded-lg px-4 py-3 mx-2 font-body font-medium text-base transition-transform duration-600 ease-out hover:translate-x-1" href="../detalle_de_pel_cula/code.html">
+<span class="material-symbols-outlined" data-icon="movie" style="font-variation-settings: 'FILL' 1;">movie</span>
+<span>Movies</span>
+</a>
+<a class="flex items-center gap-3 text-[#adaaaa] px-4 py-3 mx-2 font-body font-medium text-base hover:bg-[#262626] rounded-lg transition-all duration-300 hover:text-white transition-transform duration-600 ease-out hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 text-[#adaaaa] px-4 py-3 mx-2 font-body font-medium text-base hover:bg-[#262626] rounded-lg transition-all duration-300 hover:text-white transition-transform duration-600 ease-out hover:translate-x-1" href="../panel_de_administraci_n_cms/code.html">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="px-4 mt-auto">
+<button class="w-full bg-primary-container text-on-primary-container py-3 rounded-lg font-bold flex items-center justify-center gap-2 transition-all duration-600 ease-in-out hover:opacity-80 scale-95 hover:scale-100">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>Add New Movie</span>
+</button>
+<div class="mt-6 flex items-center gap-3 px-2">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Admin User Profile" class="w-full h-full object-cover" data-alt="professional headshot of an administrative theater manager in a dark suit with soft studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_j58faMoEN6O8p0TTeR3f-kEUHokh58emFehdLcmn6kJN66RhwVQyA9RaJJ6Fp1iK1-Dv5E6w7LD88HXQkhCQAVnWkLufdi21NyUyN-c_ntk5PNh9jXioWKSycpjcXT0cKwUjpPZbV7UWtI990E4ApSjkxSfhelJmjUM4x6UnAaA5iWuGLVuZHyC2hEWoOYzupUczhjRAqUBVqDeiWocyNG7vcQe1ymHpH1eTYgopbr8LOPbqJZPAtb3eDIjqT8seyDZKLDr3vm9k"/>
+</div>
+<div>
+<p class="text-sm font-bold">Admin User</p>
+<p class="text-xs text-on-surface-variant font-label">Senior Curator</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 p-8 min-h-screen bg-background">
+<!-- Header Section -->
+<header class="flex justify-between items-end mb-12">
+<div>
+<h2 class="text-4xl font-black font-headline tracking-tighter uppercase text-on-background">Movie Inventory</h2>
+<p class="font-label text-on-surface-variant text-sm tracking-widest mt-2">MANAGE LIVE SHOWS AND CONTENT BILLBOARD</p>
+</div>
+<div class="flex gap-4">
+<div class="bg-surface-container-low px-4 py-2 rounded-lg flex items-center gap-3 border border-white/5">
+<span class="material-symbols-outlined text-primary" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm text-on-surface w-48 font-body" placeholder="Quick search..." type="text"/>
+</div>
+</div>
+</header>
+<!-- Stats Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
+<div class="bg-surface-container p-6 rounded-xl border border-white/5 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-10 transition-transform duration-700 group-hover:scale-110">
+<span class="material-symbols-outlined text-8xl" data-icon="confirmation_number">confirmation_number</span>
+</div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest mb-1">Weekly Ticket Sales</p>
+<h3 class="text-3xl font-black font-headline text-primary">12,482</h3>
+<p class="text-xs text-secondary-dim mt-2 flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+                    +14.2% FROM LAST WEEK
+                </p>
+</div>
+<div class="bg-surface-container p-6 rounded-xl border border-white/5 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-10 transition-transform duration-700 group-hover:scale-110">
+<span class="material-symbols-outlined text-8xl" data-icon="chair">chair</span>
+</div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest mb-1">Avg. Theater Occupancy</p>
+<h3 class="text-3xl font-black font-headline text-on-surface">68.4%</h3>
+<p class="text-xs text-on-surface-variant mt-2 font-medium tracking-tight">32 ACTIVE HALLS</p>
+</div>
+<div class="bg-surface-container p-6 rounded-xl border border-white/5 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-10 transition-transform duration-700 group-hover:scale-110">
+<span class="material-symbols-outlined text-8xl" data-icon="payments">payments</span>
+</div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest mb-1">Revenue (MTD)</p>
+<h3 class="text-3xl font-black font-headline text-on-surface">$184.5K</h3>
+<p class="text-xs text-secondary-dim mt-2 flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+                    TARGET: $200K
+                </p>
+</div>
+<div class="bg-surface-container p-6 rounded-xl border border-white/5 relative overflow-hidden group">
+<div class="absolute -right-4 -top-4 opacity-10 transition-transform duration-700 group-hover:scale-110">
+<span class="material-symbols-outlined text-8xl" data-icon="visibility">visibility</span>
+</div>
+<p class="font-label text-xs text-on-surface-variant uppercase tracking-widest mb-1">Campaign Reach</p>
+<h3 class="text-3xl font-black font-headline text-on-surface">1.2M</h3>
+<p class="text-xs text-on-surface-variant mt-2 font-medium tracking-tight">IMPRESSIONS ACROSS CMS</p>
+</div>
+</section>
+<!-- Movie List Management -->
+<section class="bg-surface-container-low rounded-2xl overflow-hidden border border-white/5">
+<div class="px-8 py-6 border-b border-white/5 flex justify-between items-center bg-surface-container">
+<h3 class="font-headline font-bold text-xl uppercase tracking-tight">Active Billboard</h3>
+<div class="flex gap-2">
+<button class="bg-surface-container-highest p-2 rounded-lg hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+</button>
+<button class="bg-surface-container-highest p-2 rounded-lg hover:bg-white/10 transition-colors">
+<span class="material-symbols-outlined" data-icon="sort">sort</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="font-label text-xs text-on-surface-variant uppercase tracking-widest border-b border-white/5">
+<th class="px-8 py-4 font-bold">Movie Info</th>
+<th class="px-8 py-4 font-bold">Release Date</th>
+<th class="px-8 py-4 font-bold">Status</th>
+<th class="px-8 py-4 font-bold">Sales</th>
+<th class="px-8 py-4 font-bold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-white/5">
+<!-- Movie Row 1 -->
+<tr class="group hover:bg-white/5 transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-24 rounded-lg overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img alt="Neon Genesis" class="w-full h-full object-cover" data-alt="vibrant cyberpunk city street at night with neon signs reflecting in puddles, cinematic composition" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDJGGaSxjV98Z7znhqETjXoSkpbvrHpXhd_ppc8PxcWA_3dlcx1yiYwoADpA44SolJFWMgOX4i7gWYMJjGkm5L63pDcMRecgc_b6db_SN1qQ8zL_NaEvbQ5kFDEWrkWs066JOtyHFihhrYGme_-SCUj3eV0sNxXFIDpyHyxpc0RW3fUKxF31re6Z-ZIWLQtI3fBiw4V4-xlGWPpb3LPyo9Q0Uxe-luB_KRnEOZlIzwLL79UzIj0ndIshT6MARhzhFauNUUL9fRS0g1"/>
+</div>
+<div>
+<p class="font-headline font-bold text-lg text-on-surface group-hover:text-primary transition-colors">NEON GENESIS: REDUX</p>
+<p class="font-label text-xs text-on-surface-variant">Sci-Fi • 2h 14m • PG-13</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-body text-sm text-on-surface">Oct 24, 2024</td>
+<td class="px-8 py-6">
+<span class="bg-primary-container/10 text-primary-container px-3 py-1 rounded-full text-xs font-bold font-label uppercase">Now Showing</span>
+</td>
+<td class="px-8 py-6">
+<p class="text-sm font-bold font-body">$42,910</p>
+<div class="w-24 h-1 bg-white/10 rounded-full mt-2 overflow-hidden">
+<div class="w-4/5 h-full bg-primary"></div>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-white/10 rounded-lg text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-white/10 rounded-lg text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Movie Row 2 -->
+<tr class="group hover:bg-white/5 transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-24 rounded-lg overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img alt="The Last Solo" class="w-full h-full object-cover" data-alt="dramatic black and white portrait of an old jazz musician with a saxophone, moody lighting and smoke" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8HT1nqEGzmYKNmqbCChQfSQSK6L4tBACDi1kfVTvjsSo2Rurbg_nH-DXg8a-Q3LEBy9vfbTQiiP-P9vjvNoG1T00q2OYmpNIVHP_SzQyC5s3SiFcxxNhFVF2QBVgc2K8SGR69F3hBxHPTvdsAcUtBCWXrFDwRBIh5-FEpFU7DIsMpv6MnEcAYPmC6xGcTvNR_CnAN-o4s2c-Uxwmg0AH67imHH84-tumc95-OWlWyxGqvymwejyX4NCLgqOO4oziVQqhopCzYocyA"/>
+</div>
+<div>
+<p class="font-headline font-bold text-lg text-on-surface group-hover:text-primary transition-colors">THE LAST SOLO</p>
+<p class="font-label text-xs text-on-surface-variant">Drama • 1h 58m • R</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-body text-sm text-on-surface">Nov 02, 2024</td>
+<td class="px-8 py-6">
+<span class="bg-secondary-container/20 text-secondary px-3 py-1 rounded-full text-xs font-bold font-label uppercase">Limited Release</span>
+</td>
+<td class="px-8 py-6">
+<p class="text-sm font-bold font-body">$18,400</p>
+<div class="w-24 h-1 bg-white/10 rounded-full mt-2 overflow-hidden">
+<div class="w-1/3 h-full bg-secondary"></div>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-white/10 rounded-lg text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-white/10 rounded-lg text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Movie Row 3 -->
+<tr class="group hover:bg-white/5 transition-colors">
+<td class="px-8 py-6">
+<div class="flex items-center gap-4">
+<div class="w-16 h-24 rounded-lg overflow-hidden bg-surface-container-highest flex-shrink-0">
+<img alt="Stellaris" class="w-full h-full object-cover" data-alt="abstract cosmic landscape with swirling nebulas in deep purple and orange, ethereal lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3zgFdMznC9askOIGi8ylr1BapLfAfG1NRVDA9RbJu-u_RuexNpLNosM_GGOD33HVSPv5tHcX9Y_WjKeXkp7vlCXgNJg3AFVgB11oZyxi9vJ1-ZHwHk7x_B-WU0kMQkSoRPa5hTSxQLpNitYwd3Cc8B4fkdg6uBrNx8eIWR22HG2FMNpc9Sv2q77E29JYMcf9_9VZbdpIed5oF8Xrsk_9Vk_DYPiqQI2YVaQj6l4wHmbkOEokHe38hyqNMzqgTXUZhU3GUG_J4KhaK"/>
+</div>
+<div>
+<p class="font-headline font-bold text-lg text-on-surface group-hover:text-primary transition-colors">STELLARIS: ODYSSEY</p>
+<p class="font-label text-xs text-on-surface-variant">Animation • 1h 35m • G</p>
+</div>
+</div>
+</td>
+<td class="px-8 py-6 font-body text-sm text-on-surface">Oct 15, 2024</td>
+<td class="px-8 py-6">
+<span class="bg-surface-variant text-on-surface-variant px-3 py-1 rounded-full text-xs font-bold font-label uppercase">Archived</span>
+</td>
+<td class="px-8 py-6">
+<p class="text-sm font-bold font-body">$105,200</p>
+<div class="w-24 h-1 bg-white/10 rounded-full mt-2 overflow-hidden">
+<div class="w-full h-full bg-on-surface-variant"></div>
+</div>
+</td>
+<td class="px-8 py-6 text-right">
+<div class="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:bg-white/10 rounded-lg text-on-surface-variant hover:text-white transition-colors">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-white/10 rounded-lg text-on-surface-variant hover:text-error transition-colors">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="px-8 py-6 border-t border-white/5 flex justify-between items-center text-sm font-label text-on-surface-variant">
+<p>Showing 1-3 of 24 movies</p>
+<div class="flex gap-4">
+<button class="hover:text-white transition-colors uppercase tracking-widest font-bold disabled:opacity-30" disabled="">Previous</button>
+<button class="hover:text-white transition-colors uppercase tracking-widest font-bold">Next</button>
+</div>
+</div>
+</section>
+<!-- Secondary Task Grid -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+<!-- Quick Actions -->
+<div class="bg-surface-container p-8 rounded-2xl border border-white/5">
+<h4 class="font-headline font-bold text-lg mb-6 uppercase tracking-tight">Theater Maintenance</h4>
+<div class="space-y-4">
+<div class="flex items-center justify-between p-4 bg-background rounded-xl border border-white/5 hover:border-primary/30 transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="report_problem">report_problem</span>
+<div>
+<p class="font-bold text-sm">Projector Hall 04 Faulty</p>
+<p class="text-xs text-on-surface-variant">Technician assigned • 2h ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="flex items-center justify-between p-4 bg-background rounded-xl border border-white/5 hover:border-primary/30 transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary" data-icon="cleaning_services">cleaning_services</span>
+<div>
+<p class="font-bold text-sm">Cleaning Schedule Update</p>
+<p class="text-xs text-on-surface-variant">Next cycle in 45 mins</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Promotion Banner -->
+<div class="relative rounded-2xl overflow-hidden group">
+<img alt="Projector" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2000ms]" data-alt="close up of a professional cinema projector lens glowing with light in a dark theater booth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBao3nCxxJe767GSAJt-25iz-Mc4LRQFeueELO9UYsFFG_FNBtKx3Y4ZQVIbMB0pSiD-N5jeZAG6zK6FmYAOSBNW2NqVyJYouJZVP5bgdY3pCI5D9aSe9-_v2CgyvwpVpyRi-mkUFNKIrVlnqZMiRCCaJaNt0qKQZeN0d_Ir4n03RnttAmcucYYq4-Ba998M9iwop6vZ-MzyikrDPLUmaXmXsc8_vtHZIz42ql_6edAH6xFhJMm4DADNAByc7ZjNf1ep1jAvYbgHvdZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent p-8 flex flex-col justify-end">
+<p class="font-label text-xs text-primary font-bold uppercase tracking-[0.2em] mb-2">Internal Spotlight</p>
+<h4 class="font-headline font-black text-2xl uppercase leading-none mb-4">IMAX Upgrade Initiative</h4>
+<p class="text-on-surface-variant text-sm max-w-xs mb-6 font-body">Manage the digital rollout for our new Laser Projector fleet across all premium theater locations.</p>
+<button class="w-fit px-6 py-2 border border-white/20 rounded-md font-bold text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all">Launch Dashboard</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Global Footer -->
+<footer class="w-full mt-20 bg-[#0e0e0e] dark:bg-[#0e0e0e]">
+<div class="max-w-7xl mx-auto px-8 py-12 flex flex-col items-center border-t border-white/10">
+<div class="flex gap-8 mb-8">
+<a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#adaaaa] hover:text-[#ffe792] hover:opacity-70 transition-opacity" href="#">Privacy Policy</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#adaaaa] hover:text-[#ffe792] hover:opacity-70 transition-opacity" href="#">Terms of Service</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#adaaaa] hover:text-[#ffe792] hover:opacity-70 transition-opacity" href="#">Cookie Settings</a>
+<a class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#adaaaa] hover:text-[#ffe792] hover:opacity-70 transition-opacity" href="#">Support</a>
+</div>
+<p class="font-['Plus_Jakarta_Sans'] text-xs uppercase tracking-widest text-[#E50914] dark:text-[#E50914]">© 2024 THE CINEMATIC EDITORIAL. ALL RIGHTS RESERVED.</p>
+</div>
+</footer>
+</body></html>
