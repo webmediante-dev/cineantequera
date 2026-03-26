@@ -308,4 +308,26 @@
 <span class="text-[10px] font-label font-bold uppercase mt-1">Profile</span>
 </div>
 </div>
+      <script>
+            // Obtenemos la URL base desde las variables de entorno de Railway
+const wpUrl = process.env.NEXT_PUBLIC_WP_URL; 
+
+async function obtenerArticulosWP() {
+  try {
+    // Hacemos la petición a la API de WordPress para traer los posts
+    const respuesta = await fetch(`${wpUrl}/posts`);
+    
+    // Convertimos la respuesta a formato JSON
+    const articulos = await respuesta.json();
+    
+    // Aquí puedes ver los datos en la consola
+    console.log("Artículos cargados:", articulos);
+    
+    return articulos; 
+    
+  } catch (error) {
+    console.error("Error al conectar con WordPress:", error);
+  }
+}
+      </script>
 </body></html>
