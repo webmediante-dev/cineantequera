@@ -309,25 +309,43 @@
 </div>
 </div>
       <script>
-            // Obtenemos la URL base desde las variables de entorno de Railway
-const wpUrl = process.env.NEXT_PUBLIC_WP_URL; 
-
-async function obtenerArticulosWP() {
-  try {
-    // Hacemos la petición a la API de WordPress para traer los posts
-    const respuesta = await fetch(`${wpUrl}/posts`);
-    
-    // Convertimos la respuesta a formato JSON
-    const articulos = await respuesta.json();
-    
-    // Aquí puedes ver los datos en la consola
-    console.log("Artículos cargados:", articulos);
-    
-    return articulos; 
-    
-  } catch (error) {
-    console.error("Error al conectar con WordPress:", error);
-  }
-}
+            // 1. Ponemos la URL directamente (cambia esto por tu dominio real de WordPress)
+            const wpUrl = 'https://TU-DOMINIO-DE-WORDPRESS.com/wp-json/wp/v2'; 
+            
+            async function mostrarArticulos() {
+              try {
+                // 2. Pedimos los posts a WordPress
+                const respuesta = await fetch(`${wpUrl}/posts`);
+                const articulos = await respuesta.json();
+                
+                // 3. Buscamos el espacio en tu HTML donde vamos a ponerlos
+                const contenedor = document.getElementById('mis-articulos');
+                
+                // 4. Limpiamos el texto de "Cargando..."
+                contenedor.innerHTML = '';
+                
+                // 5. Recorremos cada artículo y lo dibujamos en la pantalla
+                articulos.forEach(articulo => {
+                  // Creamos un bloque de HTML para cada artículo
+                  const articuloHTML = `
+                    <article style="margin-bottom: 20px; padding: 10px; border: 1px solid #ccc;">
+                      <h2>${articulo.title.rendered}</h2>
+                      <div>${articulo.excerpt.rendered}</div>
+                      <a href="${articulo.link}" target="_blank">Leer en WordPress</a>
+                    </article>
+                  `;
+                  // Lo añadimos al contenedor
+                  contenedor.innerHTML += articuloHTML;
+                });
+                
+              } catch (error) {
+                console.error("Error al conectar con WordPress:", error);
+                document.getElementById('mis-articulos').innerHTML = 'Hubo un error al cargar los artículos.';
+              }
+            }
+            
+            // 6. Le decimos al código que se ejecute nada más abrir la página
+            mostrarArticulos();
+            }
       </script>
 </body></html>
