@@ -309,42 +309,64 @@
 </div>
 </div>
       <script>
-            // 1. Ponemos la URL directamente 
-            const wpUrl = 'https://cinesantequera.wordpress.com/wp-json/wp/v2'; 
+            // 1. Usamos la API Global de WP.com (A prueba de fallos)
+            // Añadimos ?_embed=1 para que nos traiga también las imágenes de los artículos
+            const wpUrl = 'https://public-api.wordpress.com/wp/v2/sites/cinesantequera.wordpress.com/posts?_embed=1'; 
             
             async function mostrarArticulos() {
               try {
-                // 2. Pedimos los posts a WordPress
-                const respuesta = await fetch(`${wpUrl}/posts`);
+                const respuesta = await fetch(wpUrl);
                 const articulos = await respuesta.json();
                 
-                // 3. Buscamos el espacio en tu HTML donde vamos a ponerlos
                 const contenedor = document.getElementById('mis-articulos');
                 
-                // 4. Limpiamos el texto inicial
+                // Limpiamos las películas de prueba
                 contenedor.innerHTML = '';
                 
-                // 5. Recorremos cada artículo y lo dibujamos en la pantalla
+                // Recorremos los artículos de WordPress
                 articulos.forEach(articulo => {
-                  // Creamos un bloque de HTML para cada artículo
+                  
+                  // Extraemos el título, el enlace y limpiamos el resumen
+                  const titulo = articulo.title.rendered;
+                  const enlace = articulo.link;
+                  // WP manda el texto con etiquetas <p>, las quitamos para que quede limpio
+                  const resumenLimpio = articulo.excerpt.rendered.replace(/<[^>]*>?/gm, '').substring(0, 60) + '...';
+                  
+                  // Buscamos si el artículo tiene imagen destacada, si no, ponemos una de cine por defecto
+                  let imagenUrl = 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=800&auto=format&fit=crop';
+                  if (articulo._embedded && articulo._embedded['wp:featuredmedia']) {
+                      imagenUrl = articulo._embedded['wp:featuredmedia'][0].source_url;
+                  }
+
+                  // 2. Dibujamos el artículo USANDO TU PROPIO DISEÑO TAILWIND
                   const articuloHTML = `
-                    <article style="margin-bottom: 20px; padding: 10px; border: 1px solid #ccc;">
-                      <h2>${articulo.title.rendered}</h2>
-                      <div>${articulo.excerpt.rendered}</div>
-                      <a href="${articulo.link}" target="_blank">Leer en WordPress</a>
-                    </article>
+                    <div class="group cursor-pointer" onclick="window.open('${enlace}', '_blank')">
+                      <div class="relative aspect-[2/3] rounded-lg overflow-hidden mb-6 transition-transform duration-600 ease-out group-hover:scale-[1.02]">
+                        <img class="w-full h-full object-cover" src="${imagenUrl}" alt="Portada de ${titulo}"/>
+                        <div class="absolute top-4 right-4 bg-black/60 backdrop-blur-sm px-2 py-1 rounded flex items-center gap-1 border border-white/10">
+                          <span class="material-symbols-outlined text-[#ffe792] text-xs" style="font-variation-settings: 'FILL' 1;">movie</span>
+                          <span class="text-xs font-label font-bold">Blog</span>
+                        </div>
+                        <div class="absolute bottom-0 inset-x-0 h-1/2 scrim-gradient flex flex-col justify-end p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <button class="bg-primary text-on-primary w-full py-3 rounded-md font-headline font-bold text-xs uppercase tracking-widest">Leer Artículo</button>
+                        </div>
+                      </div>
+                      <h3 class="font-headline text-2xl font-bold tracking-tight group-hover:text-primary transition-colors">${titulo}</h3>
+                      <div class="flex items-center gap-2 mt-2">
+                        <span class="font-label text-[10px] text-on-surface-variant tracking-widest uppercase">${resumenLimpio}</span>
+                      </div>
+                    </div>
                   `;
-                  // Lo añadimos al contenedor
+                  
                   contenedor.innerHTML += articuloHTML;
                 });
                 
               } catch (error) {
                 console.error("Error al conectar con WordPress:", error);
-                document.getElementById('mis-articulos').innerHTML = 'Hubo un error al cargar los artículos.';
+                document.getElementById('mis-articulos').innerHTML = '<p class="text-white col-span-full">Hubo un error al cargar la cartelera. Revisa la privacidad de tu WordPress.</p>';
               }
             }
             
-            // 6. Le decimos al código que se ejecute nada más abrir la página
             mostrarArticulos();
       </script>
 </body></html>
