@@ -309,7 +309,8 @@
 </div>
 </div>
       <script>
-            // 1. Ponemos la URL directamente (cambia esto por tu dominio real de WordPress)
+            <script>
+            // 1. Ponemos la URL directamente 
             const wpUrl = 'https://cinesantequera.wordpress.com/wp-json/wp/v2'; 
             
             async function mostrarArticulos() {
@@ -321,7 +322,7 @@
                 // 3. Buscamos el espacio en tu HTML donde vamos a ponerlos
                 const contenedor = document.getElementById('mis-articulos');
                 
-                // 4. Limpiamos el texto de "Cargando..."
+                // 4. Limpiamos el texto inicial
                 contenedor.innerHTML = '';
                 
                 // 5. Recorremos cada artículo y lo dibujamos en la pantalla
@@ -346,6 +347,6 @@
             
             // 6. Le decimos al código que se ejecute nada más abrir la página
             mostrarArticulos();
-            }
+      </script>
       </script>
 </body></html>
